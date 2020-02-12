@@ -1,28 +1,45 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app"  class="container mx-auto">
+    <h1>Meu primeiro Math App.vue</h1>
+   <!-- <div> header</div>
+    <HelloWorld msg="Vue.js aula da thais" :n="4"/>-->
+    <div class="cards"> 
+      <Quadrado :numero="5"/>
+      <Cubo :numero="5"/>
+    </div>
+    
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+//import HelloWorld from './components/HelloWorld.vue'
+import Quadrado from './components/Quadrado.vue'
+import Cubo from './components/Cubo.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    //HelloWorld,
+    Quadrado,
+    Cubo
+  },data(){
+    return { n : 7}
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
   margin-top: 60px;
+}
+
+.cards{
+  padding: 24px;
+  display: flex;
+  justify-content:space-between; 
+  margin: auto;
 }
 </style>
